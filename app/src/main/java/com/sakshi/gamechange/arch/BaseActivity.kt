@@ -1,11 +1,11 @@
 package com.sakshi.gamechange.arch
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.sakshi.gamechange.GameChange
 
 @SuppressLint("Registered")
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity : FragmentActivity() {
 
   private var compRoot: CompRootUi? = null
 

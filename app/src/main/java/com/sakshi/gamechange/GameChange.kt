@@ -9,7 +9,7 @@ class GameChange : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        compRoot = CompRoot(this)
+        compRoot = CompRoot()
     }
 
     fun getCompRoot() = compRoot

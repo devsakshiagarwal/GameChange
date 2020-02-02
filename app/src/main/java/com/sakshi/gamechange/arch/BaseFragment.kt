@@ -1,6 +1,5 @@
 package com.sakshi.gamechange.arch
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.sakshi.gamechange.GameChange
 
@@ -11,7 +10,7 @@ open class BaseFragment : Fragment() {
     if (compRoot == null) {
       compRoot = CompRootUi(
           (this.activity!!.application as GameChange).getCompRoot(),
-          this.activity!! as AppCompatActivity
+          this.activity!!
       )
     }
     return compRoot

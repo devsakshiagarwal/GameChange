@@ -1,17 +1,16 @@
 package com.sakshi.gamechange.arch
 
 import com.sakshi.gamechange.Configuration
-import com.sakshi.gamechange.GameChange
+import com.sakshi.gamechange.model.apis.IosSdkIssueApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class CompRoot(private val oneClickDriveApplication: GameChange) {
+class CompRoot {
 
   private lateinit var retrofit: Retrofit
   private lateinit var client: OkHttpClient
-  private var token = ""
 
   init {
     initHttpClient()
@@ -41,4 +40,5 @@ class CompRoot(private val oneClickDriveApplication: GameChange) {
 
   private fun getRetrofit() = retrofit
 
+    fun getIsoSdkApi(): IosSdkIssueApi = getRetrofit().create(IosSdkIssueApi::class.java)
 }
