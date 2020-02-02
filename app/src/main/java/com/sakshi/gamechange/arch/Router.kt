@@ -13,7 +13,6 @@ class Router(
         val issueListFragment = IssueListFragment.newInstance()
         val transaction = fragmentManager.beginTransaction()
         transaction.add(R.id.fragment_container, issueListFragment)
-        transaction.addToBackStack("ISSUE_LIST_FRAGMENT")
         transaction.commit()
     }
 

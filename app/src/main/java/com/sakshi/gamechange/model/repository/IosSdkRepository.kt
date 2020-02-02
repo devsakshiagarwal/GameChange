@@ -63,7 +63,6 @@ class IosSdkRepository(private val iosSdkIssueApi: IosSdkIssueApi, private val d
 
     fun cancelApiCalls() {
         issuesCall.cancel()
-        commentsCall.cancel()
     }
 
     private fun getComments(commentsList: List<IssueDetail>): List<IssueDetailDb> {
