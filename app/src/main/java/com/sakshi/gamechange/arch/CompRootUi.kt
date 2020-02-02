@@ -1,6 +1,7 @@
 package com.sakshi.gamechange.arch
 
 import androidx.fragment.app.FragmentActivity
+import com.sakshi.gamechange.model.database.AppDatabase
 import com.sakshi.gamechange.model.repository.IosSdkRepository
 
 class CompRootUi(
@@ -10,5 +11,7 @@ class CompRootUi(
 
     fun getRouter() = Router(activityContext.supportFragmentManager)
 
-    fun getSdkIssueRepository() = IosSdkRepository(compRoot.getIsoSdkApi())
+    fun getSdkIssueRepository() = IosSdkRepository(compRoot.getIsoSdkApi(), getDb())
+
+    fun getDb() = AppDatabase.invoke(activityContext.applicationContext)
 }

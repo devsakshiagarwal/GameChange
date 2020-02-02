@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sakshi.gamechange.R
-import com.sakshi.gamechange.model.schema.IssueDetail
+import com.sakshi.gamechange.model.schema.IssueDetailDb
 import kotlinx.android.synthetic.main.list_comments.view.*
 
-class IssueDetailAdapter(private val list: List<IssueDetail>, private val context: Context) :
+class IssueDetailAdapter(private val list: List<IssueDetailDb>, private val context: Context) :
     RecyclerView.Adapter<IssueDetailAdapter.RepoCommentsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoCommentsViewHolder {
@@ -22,8 +22,8 @@ class IssueDetailAdapter(private val list: List<IssueDetail>, private val contex
     }
 
     override fun onBindViewHolder(holder: RepoCommentsViewHolder, position: Int) {
-        val repoComments: IssueDetail = list[position]
-        holder.tvTitle.text = repoComments.user.login
+        val repoComments: IssueDetailDb = list[position]
+        holder.tvTitle.text = repoComments.user
         holder.tvBody.text = repoComments.body
     }
 

@@ -42,7 +42,7 @@ class IssueListFragment : BaseFragment(), IssueListAdapter.OnIssueItemClickListe
     }
 
     private fun startObserving() {
-        viewModel.liveDataIssuesList.observe(viewLifecycleOwner, Observer {
+        compRoot()!!.getDb().issueDao().getAll().observe(viewLifecycleOwner, Observer {
             rv_issue_list.apply {
                 layoutManager = LinearLayoutManager(activity)
                 adapter =

@@ -3,11 +3,11 @@ package com.sakshi.gamechange.view.issue_detail
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sakshi.gamechange.model.repository.IosSdkRepository
-import com.sakshi.gamechange.model.schema.IssueDetail
+import com.sakshi.gamechange.model.schema.IssueDetailDb
 
 class IssueDetailViewModel : ViewModel(), IosSdkRepository.IosSdkCommentsListener {
 
-    var liveDataCommentsList = MutableLiveData<List<IssueDetail>>()
+    var liveDataCommentsList = MutableLiveData<List<IssueDetailDb>>()
 
     fun setRepository(iosSdkRepository: IosSdkRepository, commentId: String) {
         iosSdkRepository.setCommentListListener(this)
@@ -18,7 +18,7 @@ class IssueDetailViewModel : ViewModel(), IosSdkRepository.IosSdkCommentsListene
         iosSdkRepository.cancelApiCalls()
     }
 
-    override fun onIssueCommentListSuccess(issuesList: List<IssueDetail>) {
+    override fun onIssueCommentListSuccess(issuesList: List<IssueDetailDb>) {
         liveDataCommentsList.value = issuesList
     }
 
